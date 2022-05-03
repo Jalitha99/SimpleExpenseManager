@@ -1,7 +1,8 @@
 lk/ac/mrt/cse/dbs/simpleexpensemanager/data/model/Account.java
  lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.Account
-lk/ac/mrt/cse/dbs/simpleexpensemanager/control/PersistentExpenseManager.java
- lk.ac.mrt.cse.dbs.simpleexpensemanager.control.PersistentExpenseManager
+lk/ac/mrt/cse/dbs/simpleexpensemanager/ui/MainActivity.java
+ lk.ac.mrt.cse.dbs.simpleexpensemanager.ui.MainActivity
+ lk.ac.mrt.cse.dbs.simpleexpensemanager.ui.MainActivity$SectionsPagerAdapter
 lk/ac/mrt/cse/dbs/simpleexpensemanager/ui/AddAccountFragment.java
  lk.ac.mrt.cse.dbs.simpleexpensemanager.ui.AddAccountFragment
 lk/ac/mrt/cse/dbs/simpleexpensemanager/control/InMemoryDemoExpenseManager.java
@@ -36,9 +37,8 @@ lk/ac/mrt/cse/dbs/simpleexpensemanager/data/impl/InMemoryTransactionDAO.java
  lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.InMemoryTransactionDAO
 lk/ac/mrt/cse/dbs/simpleexpensemanager/data/DB/DBHelper.java
  lk.ac.mrt.cse.dbs.simpleexpensemanager.data.DB.DBHelper
-lk/ac/mrt/cse/dbs/simpleexpensemanager/ui/MainActivity.java
- lk.ac.mrt.cse.dbs.simpleexpensemanager.ui.MainActivity
- lk.ac.mrt.cse.dbs.simpleexpensemanager.ui.MainActivity$SectionsPagerAdapter
+lk/ac/mrt/cse/dbs/simpleexpensemanager/control/PersistentExpenseManager.java
+ lk.ac.mrt.cse.dbs.simpleexpensemanager.control.PersistentExpenseManager
 lk/ac/mrt/cse/dbs/simpleexpensemanager/data/impl/PersistentTransactionDAO.java
  lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.PersistentTransactionDAO
 lk/ac/mrt/cse/dbs/simpleexpensemanager/data/impl/PersistentAccountDAO.java

@@ -30,7 +30,6 @@ public class PersistentTransactionDAO implements TransactionDAO {
     @Override
     public void logTransaction(Date date, String accountNo, ExpenseType expenseType, double amount) throws InvalidAccountException {
         SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
-        System.out.println("persistent line 33 :" + date+ " " + accountNo +" "+ expenseType + " "+ amount);
         ContentValues contentValues = new ContentValues();
         contentValues.put("account_num",accountNo);
         contentValues.put("date", new  SimpleDateFormat("dd-MM-yyyy").format(date));
@@ -51,8 +50,6 @@ public class PersistentTransactionDAO implements TransactionDAO {
             Date date = dateFormat.parse(cursor.getString(
                     cursor.getColumnIndexOrThrow("date")));
 
-//            String date = cursor.getString(
-//                    cursor.getColumnIndexOrThrow("date"));
             String account_num = cursor.getString(
                     cursor.getColumnIndexOrThrow("account_num"));
             String type = cursor.getString(
@@ -61,20 +58,14 @@ public class PersistentTransactionDAO implements TransactionDAO {
                     cursor.getColumnIndexOrThrow("amount"));
             Transaction transaction = new Transaction(date,account_num, ExpenseType.valueOf(type),amount);
             transactions.add(transaction);
-//            System.out.println("line 64 : " +date);
-//            System.out.println("account_num :"+account_num);
-//            System.out.println("type : "+type);
-//            System.out.println("amount :"+amount);
-//            System.out.println("\n");
+
         }
         cursor.close();
-        System.out.println("get all transaction method line 62 ~~~~");
         return transactions;
     }
 
     @Override
     public List<Transaction> getPaginatedTransactionLogs(int limit) throws ParseException {
-        System.out.println("line 68 ");
         List<Transaction> transactions = getAllTransactionLogs();
         int size = transactions.size();
         if (size <= limit) {

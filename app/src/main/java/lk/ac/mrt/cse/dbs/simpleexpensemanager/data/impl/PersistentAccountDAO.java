@@ -72,8 +72,6 @@ public class PersistentAccountDAO implements AccountDAO {
             double balance = cursor.getDouble(
                     cursor.getColumnIndexOrThrow("balance"));
             Account account = new Account(account_num, bank_name, account_name, balance);
-//        System.out.println("account num : "+account.getAccountNo());
-//        System.out.println("account balance : "+account.getBalance());
         return account;
     }
 
