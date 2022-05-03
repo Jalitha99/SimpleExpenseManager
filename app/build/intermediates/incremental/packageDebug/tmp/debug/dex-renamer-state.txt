@@ -1,0 +1,4 @@
+#Wed May 04 00:47:57 IST 2022
+base.0=F\:\\4th sem\\CS3042 - Database Systems\\embedded\\project\\SimpleExpenseManager\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
