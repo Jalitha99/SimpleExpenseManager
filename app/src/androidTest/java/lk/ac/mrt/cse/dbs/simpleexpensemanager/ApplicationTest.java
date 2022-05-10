@@ -17,13 +17,41 @@
 package lk.ac.mrt.cse.dbs.simpleexpensemanager;
 
 import android.app.Application;
+import android.content.Context;
 import android.test.ApplicationTestCase;
+
+import androidx.test.core.app.ApplicationProvider;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.control.ExpenseManager;
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.control.PersistentExpenseManager;
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.control.exception.ExpenseManagerException;
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.DB.DBHelper;
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.exception.InvalidAccountException;
 
 /**
  * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
  */
-public class ApplicationTest extends ApplicationTestCase<Application> {
-    public ApplicationTest() {
-        super(Application.class);
+public class ApplicationTest{
+    private static ExpenseManager expenseManager;
+
+    @BeforeClass
+    public static void testAddAccount() throws ExpenseManagerException {
+        Context context = ApplicationProvider.getApplicationContext();
+        DBHelper.createInstance(context);
+        expenseManager = new PersistentExpenseManager();
+        expenseManager.addAccount("5555","BOC", "maina", 8000);
+
+    }
+
+    @Test
+    public void checkAddAccount(){
+        try {
+            assertTrue(expenseManager.getAccountsDAO().getAccount("5555").getAccountNo().equals("5555") );
+        } catch (InvalidAccountException e) {
+            fail();
+        }
     }
 }
